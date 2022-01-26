@@ -1,3 +1,4 @@
+/* eslint-disable no-underscore-dangle */
 const ClientError = require('../../exceptions/ClientError');
 
 class UsersHandler {
@@ -77,6 +78,7 @@ class UsersHandler {
       return response;
     }
   }
+
   async getUsersByUsernameHandler(request, h) {
     try {
       const { username = '' } = request.query;
@@ -96,7 +98,7 @@ class UsersHandler {
         response.code(error.statusCode);
         return response;
       }
- 
+
       // Server ERROR!
       const response = h.response({
         status: 'error',
